@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,7 +11,7 @@
 		E9815D25285F085500617B3F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9815D24285F085500617B3F /* GoogleService-Info.plist */; };
 		E991D8F3285F01F00052900C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E991D8F2285F01F00052900C /* AppDelegate.swift */; };
 		E991D8F5285F01F00052900C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E991D8F4285F01F00052900C /* SceneDelegate.swift */; };
-		E991D8F7285F01F00052900C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E991D8F6285F01F00052900C /* ViewController.swift */; };
+		E991D8F7285F01F00052900C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E991D8F6285F01F00052900C /* LoginViewController.swift */; };
 		E991D8FA285F01F00052900C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E991D8F8285F01F00052900C /* Main.storyboard */; };
 		E991D8FC285F01F20052900C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E991D8FB285F01F20052900C /* Assets.xcassets */; };
 		E991D8FF285F01F20052900C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E991D8FD285F01F20052900C /* LaunchScreen.storyboard */; };
@@ -25,7 +25,7 @@
 		E991D8EF285F01F00052900C /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E991D8F2285F01F00052900C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E991D8F4285F01F00052900C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E991D8F6285F01F00052900C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E991D8F6285F01F00052900C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E991D8F9285F01F00052900C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E991D8FB285F01F20052900C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E991D8FE285F01F20052900C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 				E991D906285F03E80052900C /* Messenger.entitlements */,
 				E991D8F2285F01F00052900C /* AppDelegate.swift */,
 				E991D8F4285F01F00052900C /* SceneDelegate.swift */,
-				E991D8F6285F01F00052900C /* ViewController.swift */,
+				E991D8F6285F01F00052900C /* LoginViewController.swift */,
 				E991D8F8285F01F00052900C /* Main.storyboard */,
 				E991D8FB285F01F20052900C /* Assets.xcassets */,
 				E991D8FD285F01F20052900C /* LaunchScreen.storyboard */,
@@ -134,7 +134,7 @@
 				};
 			};
 			buildConfigurationList = E991D8EA285F01F00052900C /* Build configuration list for PBXProject "Messenger" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -212,7 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E991D8F7285F01F00052900C /* ViewController.swift in Sources */,
+				E991D8F7285F01F00052900C /* LoginViewController.swift in Sources */,
 				E991D8F3285F01F00052900C /* AppDelegate.swift in Sources */,
 				E991D8F5285F01F00052900C /* SceneDelegate.swift in Sources */,
 			);
