@@ -96,6 +96,9 @@
                                     <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                                     <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="forgotPasswordButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FmV-cH-s6i"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d15-2c-jN0">
                                 <rect key="frame" x="254" y="364.66666666666669" width="120" height="30"/>
@@ -110,24 +113,71 @@
                                     <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                                     <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="resendEmailButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rA7-aB-zjp"/>
+                                </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OeE-UR-jPT">
+                                <rect key="frame" x="36" y="424.66666666666669" width="318" height="76"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="loginBtn"/>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gjk-jn-Xyo"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eo6-9X-m5Z">
+                                <rect key="frame" x="60" y="775.66666666666663" width="270.33333333333331" height="34.333333333333371"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wu-wY-8dv">
+                                        <rect key="frame" x="0.0" y="0.0" width="178.66666666666666" height="34.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3a-xI-21Q">
+                                        <rect key="frame" x="188.66666666666666" y="0.0" width="81.666666666666657" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Sign up"/>
+                                        <connections>
+                                            <action selector="signUpButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hzo-5r-QOt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d15-2c-jN0" secondAttribute="trailing" constant="16" id="11g-h7-h5h"/>
+                            <constraint firstItem="OeE-UR-jPT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A1Y-Do-Fj9"/>
+                            <constraint firstItem="eo6-9X-m5Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BBb-pz-Pcn"/>
                             <constraint firstItem="7L7-JL-qiY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="CAd-Pv-oBQ"/>
                             <constraint firstItem="d1n-GY-yiC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="DnR-0Z-FML"/>
                             <constraint firstItem="7L7-JL-qiY" firstAttribute="top" secondItem="d1n-GY-yiC" secondAttribute="bottom" constant="10" id="Ezw-Rz-Mjs"/>
+                            <constraint firstItem="OeE-UR-jPT" firstAttribute="top" secondItem="EU5-9u-6dY" secondAttribute="bottom" constant="30" id="TxY-pa-KDf"/>
                             <constraint firstItem="d1n-GY-yiC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="YPT-Kf-Uhy"/>
                             <constraint firstItem="d15-2c-jN0" firstAttribute="top" secondItem="7L7-JL-qiY" secondAttribute="bottom" constant="20" id="jV9-1w-Qtt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d1n-GY-yiC" secondAttribute="trailing" constant="16" id="lx2-7c-LWN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eo6-9X-m5Z" secondAttribute="bottom" id="mqb-eR-UhT"/>
                             <constraint firstItem="EU5-9u-6dY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="qkX-qz-esc"/>
                             <constraint firstItem="d15-2c-jN0" firstAttribute="leading" secondItem="EU5-9u-6dY" secondAttribute="trailing" constant="30" id="r8V-88-p6k"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7L7-JL-qiY" secondAttribute="trailing" constant="16" id="umQ-qQ-wkG"/>
                             <constraint firstItem="EU5-9u-6dY" firstAttribute="top" secondItem="7L7-JL-qiY" secondAttribute="bottom" constant="20" id="vx9-Tb-MKy"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailLabel" destination="UeB-iO-5sF" id="tAN-Vh-wSm"/>
+                        <outlet property="emailTextField" destination="J9H-FN-R3U" id="rXp-Bi-Sli"/>
+                        <outlet property="loginButton" destination="OeE-UR-jPT" id="EvD-L6-Eal"/>
+                        <outlet property="passwordLabel" destination="RTK-F2-xF3" id="gDh-Uq-3rn"/>
+                        <outlet property="passwordTextField" destination="5Fw-Qo-ZyD" id="ye8-vf-tFN"/>
+                        <outlet property="repeatPasswordLabel" destination="z5O-ZG-bqf" id="je3-Co-G7A"/>
+                        <outlet property="repeatPasswordLineView" destination="5bl-pp-DiO" id="1VJ-FS-bKb"/>
+                        <outlet property="repeatPasswordTextField" destination="fYn-k1-Rnd" id="aES-Om-zaz"/>
+                        <outlet property="resendEmailButton" destination="d15-2c-jN0" id="72Z-f4-gfJ"/>
+                        <outlet property="signUpButton" destination="K3a-xI-21Q" id="GEV-Xk-RiS"/>
+                        <outlet property="signUpLabel" destination="5wu-wY-8dv" id="qPS-gs-Spi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -135,6 +185,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="loginBtn" width="294" height="62"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
