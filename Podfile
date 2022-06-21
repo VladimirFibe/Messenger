@@ -9,6 +9,13 @@ target 'Messenger' do
 
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
+pod 'Firebase/Firestore'
+pod 'Firebase/Storage'
+pod 'Firebase/Analytics'
+pod 'Firebase/Messaging'
+pod 'FirebaseFirestoreSwift'
+
 pod 'ProgressHUD'
+
 
 end
