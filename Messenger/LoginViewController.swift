@@ -28,11 +28,16 @@ class LoginViewController: UIViewController {
   // views
   @IBOutlet weak var repeatPasswordLineView: UIView!
   
+  // MARK: - Vars
+  
+  var isLogin = true
+  
   // MARK: - View LifeCycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
     setupTextFieldDelegates()
+    updateUIFor(login: true)
     loginButton.setTitle("", for: .normal)
   }
 
@@ -48,6 +53,7 @@ class LoginViewController: UIViewController {
   }
   
   @IBAction func signUpButtonPressed(_ sender: UIButton) {
+    updateUIFor(login: sender.titleLabel?.text == "Login")
   }
   
   // MARK: - Setup
@@ -63,6 +69,17 @@ class LoginViewController: UIViewController {
   
   // MARK: Animations
   
+  private func updateUIFor(login: Bool) {
+    loginButton.setImage(UIImage(named: login ? "loginBtn" : "registerBtn"), for: .normal)
+    signUpButton.setTitle(login ? "Sign Up" : "Login", for: .normal)
+    signUpLabel.text = login ? "Don't have an account?" : "Have an account?"
+    
+    UIView.animate(withDuration: 0.5) {
+      self.repeatPasswordLineView.isHidden = login
+      self.repeatPasswordLabel.isHidden = login
+      self.repeatPasswordTextField.isHidden = login
+    }
+  }
   private func updatePlaceholderLabels(textField: UITextField) {
     switch textField {
     case emailTextField: emailLabel.text = textField.hasText ? "Email" : ""
