@@ -10,6 +10,8 @@
 		88B06E9B013B3E61D1B069E6 /* Pods_Messenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D30D0ECB06951B98F7289F /* Pods_Messenger.framework */; };
 		E9690786286226B60097E4BC /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9690785286226B60097E4BC /* Person.swift */; };
 		E977B1602862893000ECEF34 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E977B15F2862893000ECEF34 /* Constants.swift */; };
+		E977B162286297CC00ECEF34 /* FCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = E977B161286297CB00ECEF34 /* FCollectionReference.swift */; };
+		E977B165286299B800ECEF34 /* FirebaseUserListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E977B164286299B800ECEF34 /* FirebaseUserListener.swift */; };
 		E9815D25285F085500617B3F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9815D24285F085500617B3F /* GoogleService-Info.plist */; };
 		E991D8F3285F01F00052900C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E991D8F2285F01F00052900C /* AppDelegate.swift */; };
 		E991D8F5285F01F00052900C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E991D8F4285F01F00052900C /* SceneDelegate.swift */; };
@@ -25,6 +27,8 @@
 		D4034E199086F593E09D032E /* Pods-Messenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger.release.xcconfig"; path = "Target Support Files/Pods-Messenger/Pods-Messenger.release.xcconfig"; sourceTree = "<group>"; };
 		E9690785286226B60097E4BC /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		E977B15F2862893000ECEF34 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E977B161286297CB00ECEF34 /* FCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCollectionReference.swift; sourceTree = "<group>"; };
+		E977B164286299B800ECEF34 /* FirebaseUserListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserListener.swift; sourceTree = "<group>"; };
 		E9815D24285F085500617B3F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E991D8EF285F01F00052900C /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E991D8F2285F01F00052900C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +70,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		E977B1632862989800ECEF34 /* FirebaseHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				E977B161286297CB00ECEF34 /* FCollectionReference.swift */,
+				E977B164286299B800ECEF34 /* FirebaseUserListener.swift */,
+			);
+			path = FirebaseHelpers;
+			sourceTree = "<group>";
+		};
 		E991D8E6285F01F00052900C = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +100,7 @@
 		E991D8F1285F01F00052900C /* Messenger */ = {
 			isa = PBXGroup;
 			children = (
+				E977B1632862989800ECEF34 /* FirebaseHelpers */,
 				E9690784286226AA0097E4BC /* Model */,
 				E991D906285F03E80052900C /* Messenger.entitlements */,
 				E991D8F2285F01F00052900C /* AppDelegate.swift */,
@@ -226,10 +240,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E977B162286297CC00ECEF34 /* FCollectionReference.swift in Sources */,
 				E977B1602862893000ECEF34 /* Constants.swift in Sources */,
 				E991D8F7285F01F00052900C /* LoginViewController.swift in Sources */,
 				E991D8F3285F01F00052900C /* AppDelegate.swift in Sources */,
 				E9690786286226B60097E4BC /* Person.swift in Sources */,
+				E977B165286299B800ECEF34 /* FirebaseUserListener.swift in Sources */,
 				E991D8F5285F01F00052900C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
