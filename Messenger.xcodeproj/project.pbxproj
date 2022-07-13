@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		88B06E9B013B3E61D1B069E6 /* Pods_Messenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D30D0ECB06951B98F7289F /* Pods_Messenger.framework */; };
 		E936DB3D287EA23E001A79B5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E936DB3C287EA23E001A79B5 /* README.md */; };
+		E936DB43287EF379001A79B5 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E936DB42287EF379001A79B5 /* SettingsTableViewController.swift */; };
 		E9690786286226B60097E4BC /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9690785286226B60097E4BC /* Person.swift */; };
 		E977B1602862893000ECEF34 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E977B15F2862893000ECEF34 /* Constants.swift */; };
 		E977B162286297CC00ECEF34 /* FCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = E977B161286297CB00ECEF34 /* FCollectionReference.swift */; };
@@ -27,6 +28,7 @@
 		A9D30D0ECB06951B98F7289F /* Pods_Messenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Messenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4034E199086F593E09D032E /* Pods-Messenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger.release.xcconfig"; path = "Target Support Files/Pods-Messenger/Pods-Messenger.release.xcconfig"; sourceTree = "<group>"; };
 		E936DB3C287EA23E001A79B5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E936DB42287EF379001A79B5 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		E9690785286226B60097E4BC /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		E977B15F2862893000ECEF34 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E977B161286297CB00ECEF34 /* FCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCollectionReference.swift; sourceTree = "<group>"; };
@@ -84,6 +86,32 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		E936DB3F287EE692001A79B5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E977B15F2862893000ECEF34 /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E936DB40287EE6B2001A79B5 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E991D8F2285F01F00052900C /* AppDelegate.swift */,
+				E991D8F4285F01F00052900C /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E936DB41287EF35B001A79B5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E991D8F6285F01F00052900C /* LoginViewController.swift */,
+				E936DB42287EF379001A79B5 /* SettingsTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		E9690784286226AA0097E4BC /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,12 +152,11 @@
 		E991D8F1285F01F00052900C /* Messenger */ = {
 			isa = PBXGroup;
 			children = (
+				E936DB40287EE6B2001A79B5 /* App */,
 				E977B1632862989800ECEF34 /* FirebaseHelpers */,
 				E9690784286226AA0097E4BC /* Model */,
-				E991D8F2285F01F00052900C /* AppDelegate.swift */,
-				E991D8F4285F01F00052900C /* SceneDelegate.swift */,
-				E991D8F6285F01F00052900C /* LoginViewController.swift */,
-				E977B15F2862893000ECEF34 /* Constants.swift */,
+				E936DB3F287EE692001A79B5 /* Helpers */,
+				E936DB41287EF35B001A79B5 /* Controllers */,
 				E936DB3B287EA1F3001A79B5 /* Supporting Files */,
 			);
 			path = Messenger;
@@ -264,6 +291,7 @@
 				E977B1602862893000ECEF34 /* Constants.swift in Sources */,
 				E991D8F7285F01F00052900C /* LoginViewController.swift in Sources */,
 				E991D8F3285F01F00052900C /* AppDelegate.swift in Sources */,
+				E936DB43287EF379001A79B5 /* SettingsTableViewController.swift in Sources */,
 				E9690786286226B60097E4BC /* Person.swift in Sources */,
 				E977B165286299B800ECEF34 /* FirebaseUserListener.swift in Sources */,
 				E991D8F5285F01F00052900C /* SceneDelegate.swift in Sources */,

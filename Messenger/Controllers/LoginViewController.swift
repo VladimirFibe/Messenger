@@ -21,6 +21,7 @@ class LoginViewController: UIViewController {
   @IBOutlet weak var emailTextField: UITextField!
   @IBOutlet weak var passwordTextField: UITextField!
   @IBOutlet weak var repeatPasswordTextField: UITextField!
+  
   // buttons
   @IBOutlet weak var resendEmailButton: UIButton!
   @IBOutlet weak var loginButton: UIButton!
@@ -47,7 +48,7 @@ class LoginViewController: UIViewController {
   
   @IBAction func loginButtonPressed(_ sender: UIButton) {
     if isDataInputedFor(type: isLogin ? "login" : "registration") {
-      print(#function)
+      isLogin ? loginUser() : registerUser()
     } else {
       ProgressHUD.showFailed("All Fields are required!")
     }
@@ -55,7 +56,7 @@ class LoginViewController: UIViewController {
   
   @IBAction func forgotPasswordButtonPressed(_ sender: UIButton) {
     if isDataInputedFor(type: "password") {
-      print(#function)
+      resetPassword()
     } else {
       ProgressHUD.showFailed("Email is required.")
     }
@@ -63,7 +64,7 @@ class LoginViewController: UIViewController {
   
   @IBAction func resendEmailButtonPressed(_ sender: UIButton) {
     if isDataInputedFor(type: "password") {
-      print(#function)
+      resendEmail()
     } else {
       ProgressHUD.showFailed("Email is required.")
     }
@@ -124,5 +125,67 @@ class LoginViewController: UIViewController {
     default: return emailTextField.text != ""
     }
   }
+  
+  private func loginUser() {
+    guard let email = emailTextField.text else { return }
+    guard let password = passwordTextField.text else { return }
+    FirebaseUserListener.shared.loginUser(withEmail: email, password: password) { error, isEmailVerified in
+      if let error = error {
+        ProgressHUD.showFailed(error.localizedDescription)
+      } else {
+        if isEmailVerified {
+          self.goToApp()
+        } else {
+          ProgressHUD.showFailed("Please verify email")
+          self.resendEmailButton.isHidden = false
+        }
+      }
+    }
+  }
+  private func registerUser() {
+    if passwordTextField.text == repeatPasswordTextField.text {
+      guard let email = emailTextField.text else { return }
+      guard let password = passwordTextField.text else { return }
+      FirebaseUserListener.shared.registerUser(withEmail: email, password: password) { error in
+        if let error = error {
+          ProgressHUD.showFailed(error.localizedDescription)
+        } else {
+          ProgressHUD.showSucceed("Verify email sent.")
+          self.resendEmailButton.isHidden = false
+        }
+      }
+    } else {
+      ProgressHUD.showFailed("The Passwords don't match")
+    }
+  }
+  
+  func resetPassword() {
+    guard let email = emailTextField.text else { return }
+    FirebaseUserListener.shared.resetPassword(withEmail: email) { error in
+      if let error = error {
+        ProgressHUD.showFailed(error.localizedDescription)
+      } else {
+        ProgressHUD.showSucceed("Reset link sent to email")
+      }
+    }
+  }
+  
+  func resendEmail() {
+    guard let email = emailTextField.text else { return }
+    FirebaseUserListener.shared.resendVerificationEmail(email) { error in
+      if let error = error {
+        ProgressHUD.showFailed(error.localizedDescription)
+      } else {
+        ProgressHUD.showSucceed("New verification email sent.")
+      }
+    }
+  }
+  // MARK: - Navigation
+  private func goToApp() {
+    let mainView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainApp") as! UITabBarController
+    mainView.modalPresentationStyle = .fullScreen
+    self.present(mainView, animated: true, completion: nil)
+  }
+  
 }
 

@@ -8,3 +8,4 @@
 import Foundation
 
 public let kCURRENTUSER = "currentperson"
+let userDefaults = UserDefaults.standard
