@@ -21,6 +21,7 @@
 		E991D8FA285F01F00052900C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E991D8F8285F01F00052900C /* Main.storyboard */; };
 		E991D8FC285F01F20052900C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E991D8FB285F01F20052900C /* Assets.xcassets */; };
 		E991D8FF285F01F20052900C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E991D8FD285F01F20052900C /* LaunchScreen.storyboard */; };
+		E9D8D980287F1ED5003F62FF /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8D97F287F1ED5003F62FF /* EditProfileTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		E991D8FE285F01F20052900C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E991D900285F01F20052900C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E991D906285F03E80052900C /* Messenger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Messenger.entitlements; sourceTree = "<group>"; };
+		E9D8D97F287F1ED5003F62FF /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			children = (
 				E991D8F6285F01F00052900C /* LoginViewController.swift */,
 				E936DB42287EF379001A79B5 /* SettingsTableViewController.swift */,
+				E9D8D97F287F1ED5003F62FF /* EditProfileTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				E991D8F7285F01F00052900C /* LoginViewController.swift in Sources */,
 				E991D8F3285F01F00052900C /* AppDelegate.swift in Sources */,
 				E936DB43287EF379001A79B5 /* SettingsTableViewController.swift in Sources */,
+				E9D8D980287F1ED5003F62FF /* EditProfileTableViewController.swift in Sources */,
 				E9690786286226B60097E4BC /* Person.swift in Sources */,
 				E977B165286299B800ECEF34 /* FirebaseUserListener.swift in Sources */,
 				E991D8F5285F01F00052900C /* SceneDelegate.swift in Sources */,
@@ -446,6 +450,9 @@
 				DEVELOPMENT_TEAM = 723HTEFHBA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Messenger/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "$(PRODUCT_NAME) would like to use your media library";
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) would like to use your camera";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "$(PRODUCT_NAME) would like to use your photo library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -477,6 +484,9 @@
 				DEVELOPMENT_TEAM = 723HTEFHBA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Messenger/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "$(PRODUCT_NAME) would like to use your media library";
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) would like to use your camera";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "$(PRODUCT_NAME) would like to use your photo library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

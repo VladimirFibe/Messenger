@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import ProgressHUD
 class SettingsTableViewController: UITableViewController {
 // MARK: - IBOutlets
   
@@ -40,7 +40,17 @@ class SettingsTableViewController: UITableViewController {
   }
   
   @IBAction func logoutButtonPressed(_ sender: UIButton) {
-    print(#function)
+    FirebaseUserListener.shared.logout { error in
+      if let error = error {
+        ProgressHUD.showFailed(error.localizedDescription)
+      } else {
+        let loginView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "LoginView")
+        DispatchQueue.main.async {
+          loginView.modalPresentationStyle = .fullScreen
+          self.present(loginView, animated: true)
+        }
+      }
+    }
 
   }
   @IBAction func termsAndContionsButtonPressed(_ sender: UIButton) {
@@ -57,7 +67,17 @@ class SettingsTableViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
     section == 0 ? 0.0 : 10.0
   }
+  
   override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
     0.0
   }
+  
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
+    if indexPath.section == 0 && indexPath.row == 0 {
+      performSegue(withIdentifier: "EditProfile", sender: self)
+    }
+  }
+  
+  
 }

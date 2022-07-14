@@ -698,6 +698,7 @@ PODS:
   - FirebaseStorageInternal (9.1.0):
     - FirebaseCore (~> 9.0)
     - GTMSessionFetcher/Core (< 3.0, >= 1.7)
+  - Gallery (2.4.0)
   - GoogleAppMeasurement (9.1.0):
     - GoogleAppMeasurement/AdIdSupport (= 9.1.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
@@ -816,6 +817,7 @@ DEPENDENCIES:
   - Firebase/Messaging
   - Firebase/Storage
   - FirebaseFirestoreSwift
+  - Gallery
   - ProgressHUD
 
 SPEC REPOS:
@@ -837,6 +839,7 @@ SPEC REPOS:
     - FirebaseMessaging
     - FirebaseStorage
     - FirebaseStorageInternal
+    - Gallery
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleUtilities
@@ -867,6 +870,7 @@ SPEC CHECKSUMS:
   FirebaseMessaging: 0bf5caa621182ccc66ba3be3b15e68d800d98e9f
   FirebaseStorage: 1706d112a8a9d39f3b5465d00a0cb75725f16f63
   FirebaseStorageInternal: d0e5482946dd483dbb2f6a76ef5750b9b5907049
+  Gallery: b7fc1aeb68a39ad6d2c423574750196bf9b25e5c
   GoogleAppMeasurement: 8ecc717f2abe3f9ee95a5d38db08827852894acc
   GoogleDataTransport: 5fffe35792f8b96ec8d6775f5eccd83c998d5a3b
   GoogleUtilities: e0913149f6b0625b553d70dae12b49fc62914fd1
@@ -879,6 +883,6 @@ SPEC CHECKSUMS:
   ProgressHUD: 4bdaa0d2ddf676b23324b199f9facffb5c3a1620
   PromisesObjC: 99b6f43f9e1044bd87a95a60beff28c2c44ddb72
 
-PODFILE CHECKSUM: 8ad57811630e90facfc75464fceb6270d6209233
+PODFILE CHECKSUM: e366ca448ae153bcbca67eb46aeefecb1cdd8ec2
 
 COCOAPODS: 1.11.3
