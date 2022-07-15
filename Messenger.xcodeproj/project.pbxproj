@@ -22,6 +22,7 @@
 		E991D8FC285F01F20052900C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E991D8FB285F01F20052900C /* Assets.xcassets */; };
 		E991D8FF285F01F20052900C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E991D8FD285F01F20052900C /* LaunchScreen.storyboard */; };
 		E9D8D980287F1ED5003F62FF /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8D97F287F1ED5003F62FF /* EditProfileTableViewController.swift */; };
+		E9D8D984287FC2CF003F62FF /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8D983287FC2CF003F62FF /* FileStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		E991D900285F01F20052900C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E991D906285F03E80052900C /* Messenger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Messenger.entitlements; sourceTree = "<group>"; };
 		E9D8D97F287F1ED5003F62FF /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
+		E9D8D983287FC2CF003F62FF /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 			children = (
 				E977B161286297CB00ECEF34 /* FCollectionReference.swift */,
 				E977B164286299B800ECEF34 /* FirebaseUserListener.swift */,
+				E9D8D983287FC2CF003F62FF /* FileStorage.swift */,
 			);
 			path = FirebaseHelpers;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E977B162286297CC00ECEF34 /* FCollectionReference.swift in Sources */,
+				E9D8D984287FC2CF003F62FF /* FileStorage.swift in Sources */,
 				E977B1602862893000ECEF34 /* Constants.swift in Sources */,
 				E991D8F7285F01F00052900C /* LoginViewController.swift in Sources */,
 				E991D8F3285F01F00052900C /* AppDelegate.swift in Sources */,

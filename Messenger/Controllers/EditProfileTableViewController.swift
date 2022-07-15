@@ -26,7 +26,10 @@ class EditProfileTableViewController: UITableViewController {
   }
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
+    avatarImageView.layer.cornerRadius = avatarImageView.frame.height / 2
+    avatarImageView.clipsToBounds = true
     showUserInfo()
+    
   }
   // MARK: - Update UI
   private func showUserInfo() {
@@ -51,6 +54,21 @@ class EditProfileTableViewController: UITableViewController {
     
     self.present(gallery, animated: true, completion: nil)
   }
+  // MARK: - Upload Images
+  
+  func uploadAvatarImage(_ image: UIImage) {
+    let fileDirectory = "avatars/\(Person.currentId).jpg"
+    FileStorage.uploadImage(image, directory: fileDirectory) { link in
+      if var person = Person.currentPerson {
+        person.avatar = link ?? ""
+        Person.save(person)
+        FirebaseUserListener.shared.savePersonToFireStore(person)
+      }
+      
+      FileStorage.saveFileLocally(fileData: image.jpegData(compressionQuality: 1.0)! as NSData, fileName: Person.currentId)
+    }
+  }
+  
   // MARK: - Actions
   
   @IBAction func editButtonPressed(_ sender: UIButton) {
@@ -93,7 +111,7 @@ extension EditProfileTableViewController: GalleryControllerDelegate {
     if let image = images.first {
       image.resolve { avatarImage in
         if let avatarImage = avatarImage {
-          // TODO: upload image
+          self.uploadAvatarImage(avatarImage)
           self.avatarImageView.image = avatarImage
         } else {
           ProgressHUD.showFailed("нет изображения")
@@ -116,5 +134,5 @@ extension EditProfileTableViewController: GalleryControllerDelegate {
     controller.dismiss(animated: true)
   }
   
-  
+
 }
