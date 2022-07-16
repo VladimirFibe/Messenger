@@ -11,12 +11,24 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
+  var firstRun: Bool?
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     FirebaseApp.configure()
+    firstRunCheck()
     return true
   }
-
+// MARK: - First Run
+  func firstRunCheck() {
+    firstRun = UserDefaults.standard.bool(forKey: "firstRun")
+    if let firstRun = firstRun, !firstRun {
+      print("this is first run")
+      let status = Status.allCases.map { $0.rawValue }
+      UserDefaults.standard.set(status, forKey: kSTATUS)
+      UserDefaults.standard.set(true, forKey: "firstRun")
+      UserDefaults.standard.synchronize()
+    } else { print("this is second run")}
+  }
   // MARK: UISceneSession Lifecycle
 
   func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

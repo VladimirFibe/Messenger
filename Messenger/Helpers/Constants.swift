@@ -7,5 +7,7 @@
 
 import Foundation
 
+public let kSTATUS = "status"
 public let kCURRENTUSER = "currentperson"
 let userDefaults = UserDefaults.standard
+

@@ -33,6 +33,32 @@ class FileStorage {
       ProgressHUD.showProgress(CGFloat(progress))
     }
   }
+  
+  class func downloadImage(person: Person, completion: @escaping (UIImage?) -> Void) {
+    if fileExistsAtPath(person.id), let contentsOfFile = UIImage(contentsOfFile: fileInDocumetsDirectory(fileName: person.id)) {
+      // get it locally
+      completion(contentsOfFile)
+    } else {
+      // download from fb
+      if let url = URL(string: person.avatar) {
+        let downloadQueue = DispatchQueue(label: "imageDownloadQueue")
+        downloadQueue.async {
+          if let data = NSData(contentsOf: url)  {
+            FileStorage.saveFileLocally(fileData: data, fileName: person.id)
+            DispatchQueue.main.async {
+              completion(UIImage(data: data as Data))
+            }
+          } else {
+            DispatchQueue.main.async {
+              completion(nil)
+            }
+          }
+        }
+      } else {
+        completion(nil)
+      }
+    }
+  }
   // MARK: - Save Locally
   class func saveFileLocally(fileData: NSData, fileName: String) {
     let docUrl = getDocumentsURL().appendingPathComponent(fileName, isDirectory: false)
@@ -53,4 +79,31 @@ func fileInDocumetsDirectory(fileName: String) -> String {
 
 func fileExistsAtPath(_ path: String) -> Bool {
   FileManager.default.fileExists(atPath: fileInDocumetsDirectory(fileName: path))
+}
+
+func fileNameFrom(fileUrl: String) -> String? {
+  if let name = fileUrl.components(separatedBy: "avatars%2F").last {
+    return name.components(separatedBy: ".").first
+  } else {
+    return nil
+  }
+}
+
+extension UIImage {
+  var isPortrait: Bool { size.height > size.width }
+  var breadth: CGFloat { min(size.height, size.width)}
+  var breadthSize: CGSize { CGSize(width: breadth, height: breadth)}
+  var breadthRect: CGRect { CGRect(origin: .zero, size: breadthSize)}
+  var breadthPoint: CGPoint { CGPoint(
+    x: isPortrait ? 0 : (size.width - size.height) / 2,
+    y: isPortrait ? (size.height - size.width) / 2 : 0)}
+  var circleMasked: UIImage? {
+    UIGraphicsBeginImageContextWithOptions(breadthSize, false, scale)
+    defer { UIGraphicsEndImageContext() }
+    guard let cgImage = cgImage?.cropping(to: CGRect(
+      origin: breadthPoint, size: breadthSize)) else { return nil }
+    UIBezierPath(ovalIn: breadthRect).addClip()
+    UIImage(cgImage: cgImage).draw(in: breadthRect)
+    return UIGraphicsGetImageFromCurrentImageContext()
+  }
 }

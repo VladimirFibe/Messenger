@@ -531,11 +531,50 @@
                         <outlet property="avatarImageView" destination="FBE-GJ-V3g" id="zUN-Cc-vTZ"/>
                         <outlet property="statusLabel" destination="Ws0-iy-2d9" id="fw6-hm-9Or"/>
                         <outlet property="usernameTextField" destination="LRx-9R-DWl" id="s5B-1g-4c8"/>
+                        <segue destination="5nw-NN-a5C" kind="show" identifier="statusedit" id="5mZ-nr-i67"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qsL-eu-U3p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2610.7692307692305" y="944.78672985781986"/>
+        </scene>
+        <!--Status-->
+        <scene sceneID="P5s-No-eSn">
+            <objects>
+                <tableViewController id="5nw-NN-a5C" customClass="StatusTableViewController" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="UUo-e4-DIs">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="TableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="statusCell" textLabel="ltW-6M-uOf" style="IBUITableViewCellStyleDefault" id="XYh-Ao-Oxy">
+                                <rect key="frame" x="0.0" y="50" width="390" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XYh-Ao-Oxy" id="oTl-k6-ltm">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ltW-6M-uOf">
+                                            <rect key="frame" x="20" y="0.0" width="350" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5nw-NN-a5C" id="sEt-KL-uis"/>
+                            <outlet property="delegate" destination="5nw-NN-a5C" id="6Rf-Hn-j6N"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Status" id="NAs-6X-Cob"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fme-qz-58v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3349" y="954"/>
         </scene>
         <!--Chats-->
         <scene sceneID="uEb-bU-DyZ">

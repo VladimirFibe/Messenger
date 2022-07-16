@@ -30,6 +30,13 @@ class SettingsTableViewController: UITableViewController {
       appVersionLabel.text = "App version \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "")"
       if person.avatar != "" {
         // download and set avatar image
+        FileStorage.downloadImage(person: person) { image in
+          if let image = image {
+            self.avatarImageView.image = image.circleMasked
+          } else {
+            print("что то не так", person.avatar)
+          }
+        }
       }
     }
   }
@@ -37,6 +44,7 @@ class SettingsTableViewController: UITableViewController {
   
   @IBAction func tellAFriendButtonPressed(_ sender: UIButton) {
     print(#function)
+    
   }
   
   @IBAction func logoutButtonPressed(_ sender: UIButton) {

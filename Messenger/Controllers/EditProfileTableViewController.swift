@@ -26,8 +26,6 @@ class EditProfileTableViewController: UITableViewController {
   }
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    avatarImageView.layer.cornerRadius = avatarImageView.frame.height / 2
-    avatarImageView.clipsToBounds = true
     showUserInfo()
     
   }
@@ -36,6 +34,11 @@ class EditProfileTableViewController: UITableViewController {
     if let person = Person.currentPerson {
       usernameTextField.text = person.username
       statusLabel.text = person.status
+      if person.avatar != "" {
+        FileStorage.downloadImage(person: person) { image in
+          self.avatarImageView.image = image?.circleMasked
+        }
+      }
     }
   }
   // MARK: - Configure
@@ -86,7 +89,9 @@ class EditProfileTableViewController: UITableViewController {
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
-    // TODO: show status view
+    if indexPath.section == 1 {
+      performSegue(withIdentifier: "statusedit", sender: self)
+    }
   }
 }
 
@@ -112,7 +117,7 @@ extension EditProfileTableViewController: GalleryControllerDelegate {
       image.resolve { avatarImage in
         if let avatarImage = avatarImage {
           self.uploadAvatarImage(avatarImage)
-          self.avatarImageView.image = avatarImage
+          self.avatarImageView.image = avatarImage.circleMasked
         } else {
           ProgressHUD.showFailed("нет изображения")
         }
