@@ -21,7 +21,7 @@ target 'Messenger' do
   pod 'ProgressHUD'
   # pod 'SKPhotoBrowser'
   
-  # pod 'MessageKit'
+   pod 'MessageKit'
   # pod 'InputBarAccessoryView'
   
 end

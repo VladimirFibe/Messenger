@@ -38,13 +38,29 @@ class FirebaseRecentListener {
         completion(recentChats)
       }
   }
-  func addRecent(_ recent: RecentChat) {
+  func saveRecent(_ recent: RecentChat) {
     do {
       try Firestore.firestore().collection("recent").document(recent.id).setData(from: recent)
     } catch {
       print("Error saving recent chat \(error.localizedDescription)")
     }
     
+  }
+  func resetRecentCounter(chatRoomId: String) {
+    Firestore.firestore().collection("recent").whereField("chatRoomId", isEqualTo: chatRoomId).whereField("senderId", isEqualTo: Person.currentId).getDocuments { querySnapshot, error in
+      guard let documents = querySnapshot?.documents else {
+        print("no documents for recent")
+        return
+      }
+      let allRecents = documents.compactMap {  try? $0.data(as: RecentChat.self) }
+      if allRecents.count > 0 { self.clearUnreadCounter(recent: allRecents.first!)}
+    }
+  }
+  func clearUnreadCounter(recent: RecentChat) {
+    Firestore.firestore().collection("recent").document(recent.id).updateData(["undreadCounter": 0])
+  }
+  func deleteRecent(_ recent: RecentChat) {
+    Firestore.firestore().collection("recent").document(recent.id).delete()
   }
 }
 

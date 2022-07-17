@@ -30,6 +30,7 @@
 		E9C0E1702883E3A800CFCB20 /* RecentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C0E16F2883E3A800CFCB20 /* RecentTableViewCell.swift */; };
 		E9C0E1722883F2EE00CFCB20 /* FirebaseRecentListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C0E1712883F2EE00CFCB20 /* FirebaseRecentListener.swift */; };
 		E9C0E1742884483300CFCB20 /* ChatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C0E1732884483300CFCB20 /* ChatsTableViewController.swift */; };
+		E9C0E17628847DA900CFCB20 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C0E17528847DA900CFCB20 /* ChatViewController.swift */; };
 		E9D8D980287F1ED5003F62FF /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8D97F287F1ED5003F62FF /* EditProfileTableViewController.swift */; };
 		E9D8D984287FC2CF003F62FF /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8D983287FC2CF003F62FF /* FileStorage.swift */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,7 @@
 		E9C0E16F2883E3A800CFCB20 /* RecentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTableViewCell.swift; sourceTree = "<group>"; };
 		E9C0E1712883F2EE00CFCB20 /* FirebaseRecentListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRecentListener.swift; sourceTree = "<group>"; };
 		E9C0E1732884483300CFCB20 /* ChatsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableViewController.swift; sourceTree = "<group>"; };
+		E9C0E17528847DA900CFCB20 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		E9D8D97F287F1ED5003F62FF /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
 		E9D8D983287FC2CF003F62FF /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -223,6 +225,7 @@
 			children = (
 				E9C0E16F2883E3A800CFCB20 /* RecentTableViewCell.swift */,
 				E9C0E1732884483300CFCB20 /* ChatsTableViewController.swift */,
+				E9C0E17528847DA900CFCB20 /* ChatViewController.swift */,
 			);
 			path = Chats;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				E9C0E1742884483300CFCB20 /* ChatsTableViewController.swift in Sources */,
 				E977B165286299B800ECEF34 /* FirebaseUserListener.swift in Sources */,
 				E9693CDC2882BAAF00C18392 /* UsersTableViewController.swift in Sources */,
+				E9C0E17628847DA900CFCB20 /* ChatViewController.swift in Sources */,
 				E991D8F5285F01F00052900C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

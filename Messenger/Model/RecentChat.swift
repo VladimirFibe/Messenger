@@ -74,7 +74,7 @@ func createRecentItems(chatRoomId: String, persons: [Person]) {
                                         undreadCounter: 0,
                                         avatar: receiverPerson.avatar
           )
-          FirebaseRecentListener.shared.addRecent(recentObject)
+          FirebaseRecentListener.shared.saveRecent(recentObject)
         }
       }
     }
