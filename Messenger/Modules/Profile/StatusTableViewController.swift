@@ -45,7 +45,12 @@ class StatusTableViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     let headerView = UIView()
     headerView.backgroundColor = #colorLiteral(red: 0.949000001, green: 0.949000001, blue: 0.9689999819, alpha: 1)
-    
+    let label = UILabel()
+    label.text = Person.currentPerson?.status ?? "Choose status:"
+    headerView.addSubview(label)
+    label.translatesAutoresizingMaskIntoConstraints = false
+    label.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16).isActive = true
+    label.centerYAnchor.constraint(equalTo: headerView.centerYAnchor).isActive = true
     return headerView
   }
   
@@ -55,5 +60,12 @@ class StatusTableViewController: UITableViewController {
       Person.save(person)
       FirebaseUserListener.shared.savePersonToFireStore(person)
     }
+  }
+  
+//  override func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+//    30
+//  }
+  override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    50
   }
 }

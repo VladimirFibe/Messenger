@@ -10,7 +10,6 @@ import Firebase
 import FirebaseFirestoreSwift
 
 struct Person: Codable, Equatable {
-
   var id = ""
   var username = ""
   var email = ""
@@ -35,7 +34,6 @@ struct Person: Codable, Equatable {
       }
     }
     return nil
-    
   }
   
   static func ==(lhs: Person, rhs: Person) -> Bool {
@@ -49,6 +47,26 @@ struct Person: Codable, Equatable {
       UserDefaults.standard.set(data, forKey: kCURRENTUSER)
     } catch {
       print("error saving user localy \(error.localizedDescription)")
+    }
+  }
+}
+
+func createDummyUsers() {
+  let names = ["Alison Stamp", "Inayah Duggan", "Alfie Thornton", "Rachelle Neale", "Anya Gates", "Juanita Bate"]
+  for i in 0..<5 {
+    
+    let id = UUID().uuidString
+    let fileDirectory = "avatars/\(id).jpg"
+    FileStorage.uploadImage(UIImage(named: "user\(i+1)")!, directory: fileDirectory) { (avatarLink) in
+      
+      let person = Person(id: id,
+                          username: names[i],
+                          email: "user\(i+1)@mail.com",
+                          pushId: "",
+                          avatar: avatarLink ?? "",
+                          status: Status.allCases.randomElement()?.rawValue ?? "no status")
+      
+      FirebaseUserListener.shared.savePersonToFireStore(person)
     }
   }
 }

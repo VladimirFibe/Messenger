@@ -9,5 +9,6 @@ import Foundation
 
 public let kSTATUS = "status"
 public let kCURRENTUSER = "currentperson"
+public let kCHATROOMID = "chatRoomId"
 let userDefaults = UserDefaults.standard
 

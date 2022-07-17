@@ -36,7 +36,7 @@ class FirebaseUserListener {
         }
         
         // create user and save it
-
+        
         if let user = result?.user {
           let person = Person(id: user.uid, username: email, email: email, status: "Hey there, I'm using Messager")
           Person.save(person)
@@ -66,7 +66,7 @@ class FirebaseUserListener {
       userDefaults.removeObject(forKey: kCURRENTUSER)
       userDefaults.synchronize()
       comletion(nil)
-    } catch { // let error as NSError
+    } catch { // let error as NSErrora
       comletion(error)
     }
     
@@ -99,6 +99,47 @@ class FirebaseUserListener {
         }
       case .failure(let error):
         print("Error decoding user \(error.localizedDescription)")
+      }
+    }
+  }
+  
+  func downloadAllUsersFromFirebase(completion: @escaping ([Person]) -> Void) {
+    var persons = [Person]()
+    Firestore.firestore().collection("person").limit(to: 500).getDocuments { query, error in
+      guard let documents = query?.documents else {
+        print("no documents in all users")
+        return
+      }
+      let allUsers = documents.compactMap {
+        return try? $0.data(as: Person.self)
+      }
+      allUsers.forEach {
+        if Person.currentId != $0.id {
+          persons.append($0)
+        }
+      }
+      completion(persons)
+    }
+  }
+  
+  func downloadUsersFromFirebase(withIds: [String], completion: @escaping ([Person]) -> Void) {
+    
+    var usersArray: [Person] = []
+    for i in 0..<withIds.count {
+      
+      Firestore.firestore().collection("person").document(withIds[i]).getDocument { querySnapshot, error in
+        
+        guard let document = querySnapshot else {
+          print("no document for user")
+          return
+        }
+        
+        if let person = try? document.data(as: Person.self) {
+          usersArray.append(person)
+        }
+        if i == withIds.count - 1 {
+          completion(usersArray)
+        }
       }
     }
   }
