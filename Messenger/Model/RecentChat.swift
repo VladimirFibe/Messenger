@@ -39,6 +39,12 @@ extension Date {
     dateFormatter.dateFormat = "dd MMM yyyy"
     return dateFormatter.string(from: self)
   }
+  
+  func time() -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "HH:mm"
+    return dateFormatter.string(from: self)
+  }
 }
 
 func startChat(person1: Person, person2: Person) -> String {
@@ -47,8 +53,15 @@ func startChat(person1: Person, person2: Person) -> String {
   return chatRoomId
 }
 
+func restartChat(chatRoomId: String, memberIds: [String]) {
+  FirebaseUserListener.shared.downloadUsersFromFirebase(withIds: memberIds) { persons in
+    if persons.count > 0 {
+      createRecentItems(chatRoomId: chatRoomId, persons: persons)
+    }
+  }
+}
 func createRecentItems(chatRoomId: String, persons: [Person]) {
-  var membersIdsToCreateRecent = [persons.first!.id, persons.last!.id]
+  var membersIdsToCreateRecent = persons.map{$0.id} // [persons.first!.id, persons.last!.id]
   Firestore.firestore()
     .collection("recent")
     .whereField(kCHATROOMID, isEqualTo: chatRoomId)

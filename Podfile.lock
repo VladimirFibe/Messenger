@@ -813,6 +813,11 @@ PODS:
   - nanopb/encode (2.30909.0)
   - ProgressHUD (13.6)
   - PromisesObjC (2.1.0)
+  - Realm (10.28.2):
+    - Realm/Headers (= 10.28.2)
+  - Realm/Headers (10.28.2)
+  - RealmSwift (10.28.2):
+    - Realm (= 10.28.2)
 
 DEPENDENCIES:
   - Firebase/Analytics
@@ -825,6 +830,7 @@ DEPENDENCIES:
   - Gallery
   - MessageKit
   - ProgressHUD
+  - RealmSwift
 
 SPEC REPOS:
   trunk:
@@ -859,6 +865,8 @@ SPEC REPOS:
     - nanopb
     - ProgressHUD
     - PromisesObjC
+    - Realm
+    - RealmSwift
 
 SPEC CHECKSUMS:
   abseil: ebe5b5529fb05d93a8bdb7951607be08b7fa71bc
@@ -892,7 +900,9 @@ SPEC CHECKSUMS:
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   ProgressHUD: 4bdaa0d2ddf676b23324b199f9facffb5c3a1620
   PromisesObjC: 99b6f43f9e1044bd87a95a60beff28c2c44ddb72
+  Realm: e617c54ad0f566b3d0f6a2abae7010de05f252ac
+  RealmSwift: 8a516a8759d80d52ebcec1ff1076f5f5159f98b2
 
-PODFILE CHECKSUM: db4198c5aea4726926a2cdb39ae3b68ba902e9bf
+PODFILE CHECKSUM: 6f78001e15d4f4d8eccd63cee99221d80dbd5c00
 
 COCOAPODS: 1.11.3

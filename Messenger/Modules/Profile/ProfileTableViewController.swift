@@ -55,7 +55,9 @@ class ProfileTableViewController: UITableViewController {
     {
       
       let chatId = startChat(person1: current, person2: person)
-      print("Start chatting chatroom \(chatId)")
+      let privateChatView = ChatViewController(chatId: chatId, recipientId: person.id, recipientName: person.username)
+//      privateChatView.hidesBottomBarWhenPushed = true
+      navigationController?.pushViewController(privateChatView, animated: true)
     }
   }
 }

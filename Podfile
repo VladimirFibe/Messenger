@@ -16,7 +16,7 @@ target 'Messenger' do
   pod 'FirebaseFirestoreSwift'
   
   pod 'Gallery'
-  # pod 'RealmSwift'
+  pod 'RealmSwift'
   
   pod 'ProgressHUD'
   # pod 'SKPhotoBrowser'

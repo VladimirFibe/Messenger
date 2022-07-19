@@ -12,3 +12,4 @@ public let kCURRENTUSER = "currentperson"
 public let kCHATROOMID = "chatRoomId"
 let userDefaults = UserDefaults.standard
 
+public let kNUMBEROFMESSAGES = 12
