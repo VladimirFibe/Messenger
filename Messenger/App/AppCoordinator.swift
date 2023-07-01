@@ -2,6 +2,11 @@ import Foundation
 
 final class AppCoordinator: BaseCoordinator {
     override func start() {
-        print("Hi!")
+        runAuth()
+    }
+    
+    private func runAuth() {
+        let coordinator = AuthCoordinator(router: router)
+        coordinator.start()
     }
 }

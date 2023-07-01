@@ -24,6 +24,7 @@
 		1DF1E5F02A50A4AA00AFAD81 /* InlineConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF1E5EF2A50A4AA00AFAD81 /* InlineConfigurable.swift */; };
 		1DF1E5F22A50A4D300AFAD81 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF1E5F12A50A4D300AFAD81 /* Store.swift */; };
 		1DF1E5F52A50A52F00AFAD81 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF1E5F42A50A52F00AFAD81 /* AppCoordinator.swift */; };
+		1DF1E5FA2A50A7B900AFAD81 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF1E5F92A50A7B900AFAD81 /* AuthCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		1DF1E5EF2A50A4AA00AFAD81 /* InlineConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineConfigurable.swift; sourceTree = "<group>"; };
 		1DF1E5F12A50A4D300AFAD81 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		1DF1E5F42A50A52F00AFAD81 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		1DF1E5F92A50A7B900AFAD81 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 		1D9B7DAE2A502A8C00CA77F8 /* Messenger */ = {
 			isa = PBXGroup;
 			children = (
+				1DF1E5F72A50A76000AFAD81 /* Features */,
 				1DF1E5F62A50A66800AFAD81 /* Supporting Files */,
 				1DF1E5E82A50A31400AFAD81 /* Core */,
 				1DF1E5F32A50A51800AFAD81 /* App */,
@@ -116,6 +119,22 @@
 				1D9B7DBD2A502A8D00CA77F8 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1DF1E5F72A50A76000AFAD81 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				1DF1E5F82A50A79700AFAD81 /* Auth */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		1DF1E5F82A50A79700AFAD81 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				1DF1E5F92A50A7B900AFAD81 /* AuthCoordinator.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +227,7 @@
 				1DF1E5EC2A50A42700AFAD81 /* Router.swift in Sources */,
 				1DF1E5F52A50A52F00AFAD81 /* AppCoordinator.swift in Sources */,
 				1D9B7DB02A502A8C00CA77F8 /* AppDelegate.swift in Sources */,
+				1DF1E5FA2A50A7B900AFAD81 /* AuthCoordinator.swift in Sources */,
 				1D9B7DB22A502A8C00CA77F8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
