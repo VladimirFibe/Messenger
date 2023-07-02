@@ -7,13 +7,12 @@ final class AuthCoordinator: BaseCoordinator {
     
     private func runAuth() {
         let controller = makeAuth()
-        controller.view.backgroundColor = .systemPink
-        router.setRootModule(controller)
+        router.setRootModule(controller, hideBar: true)
     }
 }
 
 extension AuthCoordinator {
     private func makeAuth() -> BaseViewControllerProtocol {
-        BaseViewController()
+        AuthViewController()
     }
 }
