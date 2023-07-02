@@ -8,7 +8,7 @@ final class TabBarCoordinator: BaseCoordinator {
     private func runTab() {
         let tabBar = makeTabBar()
         router.setRootModule(tabBar, hideBar: true)
-        let modules = [makeProfile()]
+        let modules = [makeInbox(), makeProfile()]
         modules.forEach { coordinator, _ in
             addDependency(coordinator)
             coordinator.start()
@@ -21,6 +21,13 @@ final class TabBarCoordinator: BaseCoordinator {
 extension TabBarCoordinator {
     private func makeTabBar() -> BaseViewControllerProtocol & UITabBarController {
         return BaseTabBarController()
+    }
+    
+    private func makeInbox() -> (BaseCoordinator, UINavigationController) {
+        let navigationController = UINavigationController()
+        let coordinator = InboxCoordinator(router: RouterImpl(rootController: navigationController))
+        navigationController.tabBarItem = tabItem(for: .inbox)
+        return (coordinator, navigationController)
     }
     
     private func makeProfile() -> (BaseCoordinator, UINavigationController) {

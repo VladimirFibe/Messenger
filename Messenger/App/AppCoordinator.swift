@@ -2,7 +2,7 @@ import Foundation
 
 final class AppCoordinator: BaseCoordinator {
     override func start() {
-        runTabbar()
+        runLesson()
     }
     
     private func runAuth() {
@@ -13,6 +13,12 @@ final class AppCoordinator: BaseCoordinator {
     
     private func runTabbar() {
         let coordinator = TabBarCoordinator(router: router)
+        addDependency(coordinator)
+        coordinator.start()
+    }
+    
+    private func runLesson() {
+        let coordinator = LessonCoordinator(router: router)
         addDependency(coordinator)
         coordinator.start()
     }

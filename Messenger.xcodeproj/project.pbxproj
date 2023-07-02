@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D4AB3E92A519B4D0050AD4C /* LessonCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4AB3E82A519B4D0050AD4C /* LessonCoordinator.swift */; };
+		1D4AB3EB2A519C0F0050AD4C /* ConversationLessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4AB3EA2A519C0F0050AD4C /* ConversationLessonViewController.swift */; };
+		1D4AB3ED2A519D810050AD4C /* LoginLessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4AB3EC2A519D810050AD4C /* LoginLessonViewController.swift */; };
+		1D4AB3EF2A51A28C0050AD4C /* RegisterLessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4AB3EE2A51A28C0050AD4C /* RegisterLessonViewController.swift */; };
+		1D4AB3F22A51BB0E0050AD4C /* LessonsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4AB3F12A51BB0E0050AD4C /* LessonsExtensions.swift */; };
 		1D85C34A2A510162005F0EDF /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85C3492A510162005F0EDF /* AuthViewController.swift */; };
 		1D85C34C2A510207005F0EDF /* BridgedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85C34B2A510207005F0EDF /* BridgedView.swift */; };
 		1D85C34E2A510266005F0EDF /* RestrictedUIHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85C34D2A510266005F0EDF /* RestrictedUIHostingController.swift */; };
@@ -26,6 +31,8 @@
 		1D85C3722A511CD4005F0EDF /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85C3712A511CD4005F0EDF /* Person.swift */; };
 		1D85C3742A511D00005F0EDF /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85C3732A511D00005F0EDF /* ProfileViewModel.swift */; };
 		1D85C3762A511D16005F0EDF /* SettingsOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85C3752A511D16005F0EDF /* SettingsOptionsViewModel.swift */; };
+		1D85C3792A5125ED005F0EDF /* InboxCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85C3782A5125ED005F0EDF /* InboxCoordinator.swift */; };
+		1D85C37B2A512628005F0EDF /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85C37A2A512628005F0EDF /* InboxViewController.swift */; };
 		1D9B7DB02A502A8C00CA77F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B7DAF2A502A8C00CA77F8 /* AppDelegate.swift */; };
 		1D9B7DB22A502A8C00CA77F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B7DB12A502A8C00CA77F8 /* SceneDelegate.swift */; };
 		1D9B7DB92A502A8D00CA77F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D9B7DB82A502A8D00CA77F8 /* Assets.xcassets */; };
@@ -47,6 +54,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D4AB3E82A519B4D0050AD4C /* LessonCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonCoordinator.swift; sourceTree = "<group>"; };
+		1D4AB3EA2A519C0F0050AD4C /* ConversationLessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationLessonViewController.swift; sourceTree = "<group>"; };
+		1D4AB3EC2A519D810050AD4C /* LoginLessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginLessonViewController.swift; sourceTree = "<group>"; };
+		1D4AB3EE2A51A28C0050AD4C /* RegisterLessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterLessonViewController.swift; sourceTree = "<group>"; };
+		1D4AB3F12A51BB0E0050AD4C /* LessonsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsExtensions.swift; sourceTree = "<group>"; };
 		1D85C3492A510162005F0EDF /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		1D85C34B2A510207005F0EDF /* BridgedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgedView.swift; sourceTree = "<group>"; };
 		1D85C34D2A510266005F0EDF /* RestrictedUIHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestrictedUIHostingController.swift; sourceTree = "<group>"; };
@@ -66,6 +78,8 @@
 		1D85C3712A511CD4005F0EDF /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		1D85C3732A511D00005F0EDF /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		1D85C3752A511D16005F0EDF /* SettingsOptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsOptionsViewModel.swift; sourceTree = "<group>"; };
+		1D85C3782A5125ED005F0EDF /* InboxCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxCoordinator.swift; sourceTree = "<group>"; };
+		1D85C37A2A512628005F0EDF /* InboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
 		1D9B7DAC2A502A8C00CA77F8 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D9B7DAF2A502A8C00CA77F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D9B7DB12A502A8C00CA77F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +113,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D4AB3E72A519B1C0050AD4C /* Lesson */ = {
+			isa = PBXGroup;
+			children = (
+				1D4AB3F02A51BAE90050AD4C /* Resources */,
+				1D4AB3E82A519B4D0050AD4C /* LessonCoordinator.swift */,
+				1D4AB3EA2A519C0F0050AD4C /* ConversationLessonViewController.swift */,
+				1D4AB3EC2A519D810050AD4C /* LoginLessonViewController.swift */,
+				1D4AB3EE2A51A28C0050AD4C /* RegisterLessonViewController.swift */,
+			);
+			path = Lesson;
+			sourceTree = "<group>";
+		};
+		1D4AB3F02A51BAE90050AD4C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1D4AB3F12A51BB0E0050AD4C /* LessonsExtensions.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		1D85C34F2A510323005F0EDF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +208,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		1D85C3772A5125C1005F0EDF /* Inbox */ = {
+			isa = PBXGroup;
+			children = (
+				1D85C3782A5125ED005F0EDF /* InboxCoordinator.swift */,
+				1D85C37A2A512628005F0EDF /* InboxViewController.swift */,
+			);
+			path = Inbox;
+			sourceTree = "<group>";
+		};
 		1D9B7DA32A502A8C00CA77F8 = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +236,7 @@
 		1D9B7DAE2A502A8C00CA77F8 /* Messenger */ = {
 			isa = PBXGroup;
 			children = (
+				1D4AB3E72A519B1C0050AD4C /* Lesson */,
 				1D85C3702A511CC8005F0EDF /* Model */,
 				1DF1E5F72A50A76000AFAD81 /* Features */,
 				1DF1E5F62A50A66800AFAD81 /* Supporting Files */,
@@ -241,6 +285,7 @@
 		1DF1E5F72A50A76000AFAD81 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				1D85C3772A5125C1005F0EDF /* Inbox */,
 				1D85C3682A5115C7005F0EDF /* Profile */,
 				1D85C35F2A511045005F0EDF /* TabBar */,
 				1DF1E5F82A50A79700AFAD81 /* Auth */,
@@ -342,6 +387,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DF1E5F02A50A4AA00AFAD81 /* InlineConfigurable.swift in Sources */,
+				1D4AB3EF2A51A28C0050AD4C /* RegisterLessonViewController.swift in Sources */,
 				1D85C3512A51033C005F0EDF /* UIViewController+Extension.swift in Sources */,
 				1DF1E5EE2A50A46300AFAD81 /* BaseCoordinator.swift in Sources */,
 				1D85C3742A511D00005F0EDF /* ProfileViewModel.swift in Sources */,
@@ -349,14 +395,18 @@
 				1D85C3592A51079A005F0EDF /* LoginViewModel.swift in Sources */,
 				1D85C3762A511D16005F0EDF /* SettingsOptionsViewModel.swift in Sources */,
 				1D85C35C2A5107C6005F0EDF /* RegistrationView.swift in Sources */,
+				1D4AB3E92A519B4D0050AD4C /* LessonCoordinator.swift in Sources */,
 				1D85C36C2A511732005F0EDF /* ProfileViewController.swift in Sources */,
 				1D85C36F2A511CA3005F0EDF /* ProfileView.swift in Sources */,
+				1D4AB3ED2A519D810050AD4C /* LoginLessonViewController.swift in Sources */,
 				1D85C3672A51132A005F0EDF /* BaseTabBarController.swift in Sources */,
 				1D85C34A2A510162005F0EDF /* AuthViewController.swift in Sources */,
 				1D85C3722A511CD4005F0EDF /* Person.swift in Sources */,
 				1DF1E5F22A50A4D300AFAD81 /* Store.swift in Sources */,
+				1D4AB3EB2A519C0F0050AD4C /* ConversationLessonViewController.swift in Sources */,
 				1DF1E5EA2A50A34500AFAD81 /* BaseViewController.swift in Sources */,
 				1D85C34E2A510266005F0EDF /* RestrictedUIHostingController.swift in Sources */,
+				1D4AB3F22A51BB0E0050AD4C /* LessonsExtensions.swift in Sources */,
 				1D85C3612A511054005F0EDF /* TabBarCoordinator.swift in Sources */,
 				1DF1E5EC2A50A42700AFAD81 /* Router.swift in Sources */,
 				1D85C36A2A5115F5005F0EDF /* ProfileCoordinator.swift in Sources */,
@@ -365,6 +415,8 @@
 				1D9B7DB02A502A8C00CA77F8 /* AppDelegate.swift in Sources */,
 				1D85C35E2A5107DE005F0EDF /* RegistationViewModel.swift in Sources */,
 				1D85C3652A511205005F0EDF /* CustomTabBar.swift in Sources */,
+				1D85C3792A5125ED005F0EDF /* InboxCoordinator.swift in Sources */,
+				1D85C37B2A512628005F0EDF /* InboxViewController.swift in Sources */,
 				1DF1E5FA2A50A7B900AFAD81 /* AuthCoordinator.swift in Sources */,
 				1D85C34C2A510207005F0EDF /* BridgedView.swift in Sources */,
 				1D85C3632A5110A9005F0EDF /* TabItem.swift in Sources */,
