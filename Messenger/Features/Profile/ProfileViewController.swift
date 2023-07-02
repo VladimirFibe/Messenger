@@ -2,7 +2,7 @@ import SwiftUI
 
 final class ProfileViewController: BaseViewController {
     private lazy var rootView: BridgedView = {
-        Color.blue.bridge()
+        ProfileView(person: Person.MOCK_PERSON).bridge()
     }()
 }
 
