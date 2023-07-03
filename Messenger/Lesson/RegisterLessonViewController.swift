@@ -16,7 +16,7 @@ final class RegisterLessonViewController: BaseViewController {
     }
     
     @objc private func didTapChangeProfilePicture() {
-        presentPhotoPicker()
+        presentPhotoActionSheet()
     }
     
     override func viewDidLayoutSubviews() {
@@ -46,8 +46,11 @@ extension RegisterLessonViewController {
     
     private func setupImageView() {
         scrollView.addSubview(imageView)
-        imageView.image = UIImage(named: "logo")
-        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(systemName: "person")
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.masksToBounds = true
+        imageView.layer.borderWidth = 2
+        imageView.layer.borderColor = UIColor.lightGray.cgColor
         let gesture = UITapGestureRecognizer(target: self,
                                              action: #selector(didTapChangeProfilePicture))
         gesture.numberOfTapsRequired = 1
@@ -152,6 +155,7 @@ extension RegisterLessonViewController {
                                  y: 20,
                                  width: size,
                                  height: size)
+        imageView.layer.cornerRadius = imageView.width / 2
         firstnameField.frame = CGRect(x: 30,
                                   y: imageView.bottom + 10,
                                   width: scrollView.width - 60,
@@ -216,9 +220,50 @@ extension RegisterLessonViewController: PHPickerViewControllerDelegate {
     func presentPhotoPicker() {
         var configuration = PHPickerConfiguration()
         configuration.filter = .images
-        
+        if #available(iOS 17.0, *) {
+            configuration.mode = .compact
+        }
         let picker = PHPickerViewController(configuration: configuration)
         picker.delegate = self
         present(picker, animated: true)
+    }
+}
+
+extension RegisterLessonViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func presentPhotoActionSheet() {
+        let actionSheet = UIAlertController(title: "Profile Picture",
+                                            message: "How would you like to select a picture?",
+                                            preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Cancel",
+                                            style: .cancel))
+        actionSheet.addAction(UIAlertAction(title: "Take Photo",
+                                            style: .default,
+                                            handler: { [weak self] _ in
+            self?.presentCamera()
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Choose Photo",
+                                            style: .default,
+                                            handler: { [weak self] _ in
+            self?.presentPhotoPicker()
+        }))
+        present(actionSheet, animated: true)
+    }
+    
+    func presentCamera() {
+        let controller = UIImagePickerController()
+        controller.sourceType = .camera
+        controller.delegate = self
+        controller.allowsEditing = true
+        present(controller, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true)
+        guard let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else { return }
+        self.imageView.image = selectedImage
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true)
     }
 }

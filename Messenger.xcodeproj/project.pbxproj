@@ -42,7 +42,6 @@
 		1DE7D16E2A502BFC00815E17 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1DE7D16D2A502BFC00815E17 /* FirebaseFirestore */; };
 		1DE7D1702A502BFC00815E17 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1DE7D16F2A502BFC00815E17 /* FirebaseFirestoreSwift */; };
 		1DE7D1722A502BFC00815E17 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 1DE7D1712A502BFC00815E17 /* FirebaseStorage */; };
-		1DE7D1742A502C7D00815E17 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1DE7D1732A502C7D00815E17 /* GoogleService-Info.plist */; };
 		1DF1E5E72A50A30800AFAD81 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1DF1E5E62A50A30800AFAD81 /* SnapKit */; };
 		1DF1E5EA2A50A34500AFAD81 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF1E5E92A50A34500AFAD81 /* BaseViewController.swift */; };
 		1DF1E5EC2A50A42700AFAD81 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF1E5EB2A50A42700AFAD81 /* Router.swift */; };
@@ -51,6 +50,7 @@
 		1DF1E5F22A50A4D300AFAD81 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF1E5F12A50A4D300AFAD81 /* Store.swift */; };
 		1DF1E5F52A50A52F00AFAD81 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF1E5F42A50A52F00AFAD81 /* AppCoordinator.swift */; };
 		1DF1E5FA2A50A7B900AFAD81 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF1E5F92A50A7B900AFAD81 /* AuthCoordinator.swift */; };
+		E8FA91522A528898002782C4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8FA91512A528898002782C4 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,7 +86,6 @@
 		1D9B7DB82A502A8D00CA77F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D9B7DBB2A502A8D00CA77F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D9B7DBD2A502A8D00CA77F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1DE7D1732A502C7D00815E17 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1DF1E5E92A50A34500AFAD81 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1DF1E5EB2A50A42700AFAD81 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		1DF1E5ED2A50A46300AFAD81 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
@@ -94,6 +93,7 @@
 		1DF1E5F12A50A4D300AFAD81 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		1DF1E5F42A50A52F00AFAD81 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		1DF1E5F92A50A7B900AFAD81 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		E8FA91512A528898002782C4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,9 +274,9 @@
 		1DF1E5F62A50A66800AFAD81 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1DE7D1732A502C7D00815E17 /* GoogleService-Info.plist */,
 				1D9B7DB82A502A8D00CA77F8 /* Assets.xcassets */,
 				1D9B7DBA2A502A8D00CA77F8 /* LaunchScreen.storyboard */,
+				E8FA91512A528898002782C4 /* GoogleService-Info.plist */,
 				1D9B7DBD2A502A8D00CA77F8 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -375,7 +375,7 @@
 			files = (
 				1D9B7DBC2A502A8D00CA77F8 /* LaunchScreen.storyboard in Resources */,
 				1D9B7DB92A502A8D00CA77F8 /* Assets.xcassets in Resources */,
-				1DE7D1742A502C7D00815E17 /* GoogleService-Info.plist in Resources */,
+				E8FA91522A528898002782C4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,6 +568,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Messenger/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please allow access to select a photo for your profile.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -597,6 +599,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Messenger/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please allow access to select a photo for your profile.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
