@@ -16,12 +16,7 @@ final class RegisterLessonViewController: BaseViewController {
     }
     
     @objc private func didTapChangeProfilePicture() {
-        var configuration = PHPickerConfiguration()
-        configuration.filter = .images
-        
-        let picker = PHPickerViewController(configuration: configuration)
-        picker.delegate = self
-        present(picker, animated: true)
+        presentPhotoPicker()
     }
     
     override func viewDidLayoutSubviews() {
@@ -214,5 +209,14 @@ extension RegisterLessonViewController: PHPickerViewControllerDelegate {
                 }
             }
         }
+    }
+    
+    func presentPhotoPicker() {
+        var configuration = PHPickerConfiguration()
+        configuration.filter = .images
+        
+        let picker = PHPickerViewController(configuration: configuration)
+        picker.delegate = self
+        present(picker, animated: true)
     }
 }
