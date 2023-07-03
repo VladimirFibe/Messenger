@@ -204,7 +204,9 @@ extension RegisterLessonViewController: PHPickerViewControllerDelegate {
             let previousImage = imageView.image
             itemProvider.loadObject(ofClass: UIImage.self) { [weak self] image, error in
                 DispatchQueue.main.async {
-                    guard let self = self, let image = image as? UIImage, self.imageView.image == previousImage else { return }
+                    guard let self = self,
+                            let image = image as? UIImage,
+                            self.imageView.image == previousImage else { return }
                     self.imageView.image = image
                 }
             }
